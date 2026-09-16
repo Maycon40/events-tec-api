@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.UUID;
 
 import com.eventstec.api.domain.event.Event;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -36,5 +37,6 @@ public class Coupon {
 
     @ManyToOne
     @JoinColumn(name = "event_id")
+    @JsonIgnore
     private Event event;
 }

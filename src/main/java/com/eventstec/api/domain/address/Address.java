@@ -3,6 +3,7 @@ package com.eventstec.api.domain.address;
 import java.util.UUID;
 
 import com.eventstec.api.domain.event.Event;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -33,5 +34,6 @@ public class Address {
 
     @ManyToOne
     @JoinColumn(name = "event_id")
+    @JsonBackReference
     private Event event;
 }
